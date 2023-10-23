@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+  <title>Deloitte Auditor Enterprise Tax Law Chat UI</title>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='dog.png') }}"
+  />
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+  <img src="{{ url_for('static', filename='dog.png') }}" class="icon" />
+  <h3>Deloitte Auditor Enterprise Tax Law Chat Bot</h3>
+  {% if results %}
+  <div class="results">
+    {% for item in results %}
+        <p>{{ item }}</p>
+    {% endfor %}
+  </div>
+  {% endif %}
+  <form action="/" method="post">
+    <input type="text" name="userQuery" placeholder="Enter your query" required />
+    <input type="submit" value="Send" />
+  </form>
+</body>
